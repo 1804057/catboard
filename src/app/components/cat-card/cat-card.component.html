@@ -1,6 +1,6 @@
 <ul>
     <li *ngFor="let cat of cats" class="cat-card">
-        <a>
+        <a routerLink="/details/{{cat.id}}">
             <div class="catImage">
                 <img [src]="cat.url" alt="Cat Image">
             </div>
@@ -9,7 +9,6 @@
             <div class="tags">
                 <span *ngFor="let tag of cat.temperament" class="tag">{{ tag }}</span>
             </div>
-            <button (click)="readMore(cat)">Read More</button>
         </a>
     </li>
 </ul>

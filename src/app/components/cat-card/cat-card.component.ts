@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CatsDataService } from 'src/app/services/cats-data.service';
 import { CatDataService } from 'src/app/services/cat-data.service';
+import { Router } from '@angular/router';
 import { Cat } from 'src/app/Models/Cat';
 @Component({
   selector: 'app-cat-card',
@@ -12,7 +13,8 @@ export class CatCardComponent {
   cats: Cat[]=[];
   catTraverse: any;
   constructor(private catsData:CatsDataService,
-    catData:CatDataService
+    private catData:CatDataService,
+    private router: Router
     ){
     catsData.getAll().subscribe((data)=>{
       this.catS=data;
@@ -39,7 +41,8 @@ export class CatCardComponent {
     })
   };
 
-  readMore(cat:Cat){
-    console.log(cat);
+  readMore(id: String){
+    this.router.navigate(['details', id]);
+    console.log(id);
   }
 }
