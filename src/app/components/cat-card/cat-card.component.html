@@ -1,1 +1,10 @@
-<p>cat-card works!</p>
+<div *ngFor="let cat of cats" class="container">
+
+    <div class="cat-card">
+        <img [src]="cat.url" alt="Cat 1">
+
+        <p>Description of Cat 1 goes here.</p>
+    </div>
+
+
+</div>

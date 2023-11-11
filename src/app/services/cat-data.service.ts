@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http'; '@anguler/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class CatDataService {
-
-  url = "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=REPLACE_ME";
-  constructor(private http:HttpClient) { }
-  cats(){
-    return this.http.get(this.url);
+  
+  url = "https://api.thecatapi.com/v1/images/";
+  cat!:any;
+  constructor(private http:HttpClient) {}
+  getCat(id: string){
+    return this.http.get(this.url+id);
   }
 }
