@@ -11,4 +11,5 @@ export class CatDataService {
   getCat(id: string){
     return this.http.get(this.url+id);
   }
+  
 }

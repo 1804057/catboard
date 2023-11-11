@@ -21,34 +21,25 @@ export class CatCardComponent {
         catData.getCat(cat.id).subscribe((newData)=>{
           this.catTraverse = newData;
           this.cats.push({
-            id: cat.id,
-            url: cat.url,
-            weight: cat.weight,
-            height: cat.height,
+            id: this.catTraverse['id'],
+            url: this.catTraverse['url'],
+            width: this.catTraverse['width'],
+            height: this.catTraverse['height'],
             name: this.catTraverse['breeds'][0]['name'],
             cfa_url : this.catTraverse['breeds'][0]['cfa_url'],
-            vetstreet_url: this.catTraverse['breeds'][0]['cfa_url'],
-            temperament: this.catTraverse['breeds'][0]['vetstreet_url'],
-            origin: this.catTraverse['breeds'][0]['temperament'],
+            vetstreet_url: this.catTraverse['breeds'][0]['vetstreet_url'],
+            temperament: this.catTraverse['breeds'][0]['temperament'].split(', '),
+            origin: this.catTraverse['breeds'][0]['origin'],
             country_code: this.catTraverse['breeds'][0]['country_code'],
             description: this.catTraverse['breeds'][0]['description'],
             life_span: this.catTraverse['breeds'][0]['life_span'],
           });
-          console.log(this.cats[this.cats.length-1])
         })
       });
-
-      this.cats.forEach((cat)=>{
-        console.log("cat");
-      })
     })
-
-    
-
-    
   };
-  
-  
 
-
+  readMore(cat:Cat){
+    console.log(cat);
+  }
 }

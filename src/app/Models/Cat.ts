@@ -1,7 +1,7 @@
 export class Cat{
     id!: String;
     url!:String;
-    weight!: number;
+    width!: number;
     height!: number;
     name!: String;
     cfa_url!: String;

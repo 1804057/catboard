@@ -1,10 +1,15 @@
-<div *ngFor="let cat of cats" class="container">
-
-    <div class="cat-card">
-        <img [src]="cat.url" alt="Cat 1">
-
-        <p>Description of Cat 1 goes here.</p>
-    </div>
-
-
-</div>
+<ul>
+    <li *ngFor="let cat of cats" class="cat-card">
+        <a>
+            <div class="catImage">
+                <img [src]="cat.url" alt="Cat Image">
+            </div>
+            <hr />
+            <h2>{{ cat.id }}</h2>
+            <div class="tags">
+                <span *ngFor="let tag of cat.temperament" class="tag">{{ tag }}</span>
+            </div>
+            <button (click)="readMore(cat)">Read More</button>
+        </a>
+    </li>
+</ul>

@@ -1,26 +1,28 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 3rem;
-  }
-  .container >*{
-    min-width: 25rem;
-    max-width: 40rem;
-  }
-  
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
   .cat-card {
     background-color: #c2e2d0; /* Ocean Green */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 300px;
-    margin: 16px;
+    margin: 3rem;
+    width: 400px;
     text-align: center;
     padding: 16px;
+    display: flex;
   }
   
+  .catImage{
+    height:505px;
+    margin: 0.5rem;
+  }
   .cat-card img {
     width: 100%;
     border-radius: 8px 8px 0 0;
@@ -34,17 +36,33 @@
   .cat-card p {
     color: #448d6a; /* Medium Ocean Green */
   }
-  
-  /* Responsive Layout */
-  @media (max-width: 1200px) {
-    .cat-card {
-      width: 45%; /* Display 2 cards in a row */
-    }
+  .cat-card .tag {
+    display: inline-block;
+    background-color: #34cddb; /* Blue color for tags */
+    color: #fff;
+    padding: 4px 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.3s;
   }
   
-  @media (max-width: 768px) {
-    .cat-card {
-      width: 100%; /* Display 1 card in a row */
-    }
+  .cat-card .tag:hover {
+    background-color: #2072a4; /* Darker blue on hover */
   }
   
+  .cat-card button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .cat-card button:hover {
+    background-color: #45a049;
+  }
